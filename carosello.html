@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .body {
+            position: relative;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .carosello-container {
+            
+            width: 80px;
+            max-width: 600px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .carosello-immagini {
+            max-width: 100px;
+            max-height: 100px;
+            display: flex;
+            transition: transform 0.5 ease;
+        }
+
+        .carosello-immagini img {
+            width: 100px;
+            height: auto;
+            flex-shrink: 0;
+            top: 30%;
+        }
+
+        .titolo {
+            position: absolute;
+            left: 45%;
+            top: 5%;
+        }
+
+        .next {
+            color: red;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            border-color: red;
+        }
+
+        .previous {
+            color: blue;
+            position: absolute;
+            left: 45%;
+            top: 50%;
+            border-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="carosello-container">
+        <h1 class="titolo">Carosello</h1>
+        <div class="carosello-immagini">
+            <img src="https://images.unsplash.com/photo-1516117172878-fd2c41f4a759" alt="monti belli">
+            <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0" alt="tizio">
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750" alt="casa bella">
+            <img src="https://unsplash.com/it/foto/un-alto-edificio-blu-con-un-orologio-su-un-lato-fWBZpKTQ_4U" alt="gran canion">
+            <img src="https://github.com/Palvoluss/corsoJavascriptTagL/tree/master/todolist" alt="">
+        </div>
+        <button class="next">Next</button>
+        <button class="previous">Previous</button>
+    </div>
+    <script src="carosello.js"></script>
+</body>
+
+</html>
