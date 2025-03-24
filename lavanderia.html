@@ -44,54 +44,35 @@
         }
 
         .caroselloImmagini {
-            width: 600px;
+            width: 100%;
+            max-width: 600px;
             height: 300px;
-            margin: 50px auto;
+            margin: 20px auto;
             overflow: hidden;
             position: relative;
             border: 2px solid #ddd;
         }
 
-        .caroselloImmagini.container {
+        .caroselloImmagini .container {
             display: flex;
-            transition: transform 1s ease-in-out;
+            width: 100%;
+            height: 100%;
+            position: relative;
         }
 
         .caroselloImmagini img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
             opacity: 0;
-            transition: opacity 1s ease;
-            visibility: hidden;
+            transition: opacity 0.5s ease-in-out;
         }
 
         .caroselloImmagini img.active {
             opacity: 1;
-            visibility: visible;
         }
 
-        .Chi-Siamo {
-            color: blue;
-            margin-left: 50px;
-            position: absolute;
-            top: 0;
-            margin-top: 180px;
-        }
-
-        .doveCiTroviamo {
-            color: blue;
-            margin-left: 50px;
-        }
-
-        .iNostriServizi {
-            color: blue;
-            position: absolute;
-            top: 0;
-            margin-top: 180px;
-            margin-left: 1100px;
-        }
-    </style>
-    <style>
         .navbar {
             background-color: white;
             text-align: center;
@@ -116,14 +97,79 @@
             transition: background-color 0.3s;
         }
 
-        .navabr ul li a:hover {
+        .navbar ul li a:hover {
             background-color: #575757;
         }
-        .profumo{
-            display: inline-block;
-            margin: 50px;
+
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+            gap: 20px;
         }
-        
+
+        .section {
+            flex: 1;
+            min-width: 300px;
+            max-width: 400px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .products-section {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .profumo {
+            flex: 1;
+            min-width: 200px;
+            max-width: 250px;
+            text-align: center;
+        }
+
+        .profumo img {
+            width: 100%;
+            height: 200px;
+            max-width: 200px;
+            border-radius: 8px;
+        }
+
+        .product-info {
+            margin-top: 10px;
+        }
+
+        .location-section {
+            width: 100%;
+            padding: 20px;
+            background-color: white;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .profumo {
+                max-width: 100%;
+            }
+        }
     </style>
 </head>
 
@@ -140,25 +186,74 @@
     </header>
     <div class="titolo">
         <h1>IL SOLE IN TASCA </h1>
-        <img src="c:\Users\hp\Desktop\progect\rrrr.jpg" alt="immagine titolo" width="100" height="100">
-    </div>
-    <div class="caroselloImmagini">
-        <img src="c:\Users\hp\Desktop\progect\images (1).jpg" alt="immagine 1">
-        <img src="c:\Users\hp\Desktop\progect\sole.jpg" alt="immagine 2">
-        <img src="c:\Users\hp\Desktop\progect\stireria.jpg" alt="immagine 3">
-        <img src="c:\Users\hp\Desktop\progect\detersivi.jpg" alt="immagine 4">
+        <img src="rrrr.jpg" alt="immagine titolo" width="100" height="100">
     </div>
 
-    <div class="Chi-Siamo">
-        <h1>Chi Siamo?</h1>
-        <h4><strong> Lavenderia Il Sole In Tasca <br>
-                è una realtà esistente dal 2021 <br>
-                specializzata in lavaggi ad acqua e a secco<br>
-                oltre a essere self service è anche lavanderia <br>
-                tradizionale a secco di qualità con operatore.</strong>
-        </h4>
+    <div class="main-content">
+        <div class="section" id="chi-siamo">
+            <h1>Chi Siamo?</h1>
+            <h4><strong> Lavenderia Il Sole In Tasca <br>
+                    è una realtà esistente dal 2021 <br>
+                    specializzata in lavaggi ad acqua e a secco<br>
+                    oltre a essere self service è anche lavanderia <br>
+                    tradizionale a secco di qualità con operatore.</strong>
+            </h4>
+        </div>
+
+        <div class="caroselloImmagini">
+            <div class="container">
+                <img src="images (1).jpg" alt="immagine 1">
+                <img src="sole.jpg" alt="immagine 2">
+                <img src="stireria.jpg" alt="immagine 3">
+                <img src="detersivi.jpg" alt="immagine 4">
+            </div>
+        </div>
+
+        <div class="section" id="iNostriServizi">
+            <h1>I Nostri Servizi:</h1>
+            <strong>Come lavanderia self service <br>
+                abbiamo 5 lavatrici e 5 asciugatori <br>
+                offriamo anche il servizio di stiratura <br>
+                grazie alla nostra stireria. <br>
+                Come lavenderia tradizionale ci occupiamo anche di lavaggi a secco <br>
+                anche di capi più complessi e raffinati.<br>
+                Facciamo anche da ritiro pacchi per correrieri.
+            </strong>
+        </div>
     </div>
-    <div class="doveCiTroviamo">
+
+    <div class="products-section" id="prodotti">
+        <div class="profumo">
+            <img src="p1.jpg" alt="imm1">
+            <div class="product-info">
+                <h3 class="titolo-prodotto">MITHAURA Giallo</h3>
+                <p class="costo-prodotto">$9.99</p>
+            </div>
+        </div>
+        <div class="profumo">
+            <img src="p2.jpg" alt="imm2">
+            <div class="product-info">
+                <h3 class="titolo-prodotto">MITHAURA Rosa</h3>
+                <p class="costo-prodotto">$9.99</p>
+            </div>
+        </div>
+        <div class="profumo">
+            <img src="p3.jpg" alt="imm3">
+            <div class="product-info">
+                <h3 class="titolo-prodotto">MITHAURA Blu</h3>
+                <p class="costo-prodotto">$9.99</p>
+            </div>
+        </div>
+        <div class="profumo">
+            <img src="p4.jpg" alt="imm4">
+            <div class="product-info">
+                <h3 class="titolo-prodotto">MITHAURA Verde</h3>
+                <p class="costo-prodotto">$9.99</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="location-section" id="doveCiTroviamo">
         <h1>Dove ci troviamo?</h1>
         <h4>Puoi trovarci all'Indirizzo:Via Sottomonte, 53, 55012 Capannori LU<br>
             Telefono: 346 175 8318 <br>
@@ -177,83 +272,24 @@
         </h4>
     </div>
 
-    <div class="iNostriServizi">
-        <h1>I Nostri Servizi:</h1>
-        <strong>Come lavanderia self service <br>
-
-            abbiamo 5 lavatrici e 5 asciugatori <br>
-
-            offriamo anche il servizio di stiratura <br>
-
-            grazie alla nostra stireria. <br>
-
-            Come lavenderia tradizionale ci occupiamo anche di lavaggi a secco <br>
-
-            anche di capi più complessi e raffinati.<br>
-
-            Facciamo anche da ritiro pacchi per correrieri.
-        </strong>
-
-    </div>
-    <!--prodotto1-->
-      <div class="profumo">
-        <img src="c:\Users\hp\Desktop\progect\p1.jpg" alt="imm1" width="200px" height="200px">
-        <div class="product-info">
-            <h3 class="titolo-prodotto">MITHAURA Giallo</h3>
-            <p class="costo-prodotto">$9.99</p>
-        </div>
-      </div>
-    <!--prodotto2-->
-    <div class="profumo">
-        <img src="c:\Users\hp\Desktop\progect\p2.jpg" alt="imm2" width="200px" height="200px">
-        <div class="product-info">
-            <h3 class="titolo-prodotto">MITHAURA Rosa</h3>
-            <p class="costo-prodotto">$9.99</p>
-        </div>
-    </div>
-    <!--prodotto3-->
-    <div class="profumo">
-        <img src="c:\Users\hp\Desktop\progect\p3.jpg" alt="imm3" width="200px" height="200px">
-        <div class="product-info">
-            <h3 class="titolo-prodotto">MITHAURA Blu</h3>
-            <p class="costo-prodotto">$9.99</p>
-        </div>
-    </div>
-    <!--prodotto4-->
-    <div class="profumo">
-        <img src="c:\Users\hp\Desktop\progect\p4.jpg" alt="imm4" width="200px" height="200px">
-        <div class="product-info">
-            <h3 class="titolo-prodotto">MITHAURA Verde</h3>
-            <p class="costo-prodotto">$9.99</p>
-        </div>
-    </div>
     <script>
-        let currentIndex = 0; /*indice dell'immagine corrrente*/
-        const immagini = document.querySelectorAll(".caroselloImmagini img");
-        const totalImages = immagini.length;
+        document.addEventListener('DOMContentLoaded', function() {
+            let currentIndex = 0;
+            const immagini = document.querySelectorAll(".caroselloImmagini img");
+            const totalImages = immagini.length;
 
-        console.log("immagini nel carosello:", immagini)
-        console.log("numero totale di immagini:", totalImages)
+            function cambiaImmagine() {
+                immagini[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex + 1) % totalImages;
+                immagini[currentIndex].classList.add('active');
+            }
 
-        function cambiaImmagine() {
-            console.log("indice corrente:", currentIndex)
-            immagini[currentIndex].classList.remove('active'); /*nasconde l immagine corrente*/
-            const container = document.querySelector(".caroselloImmagini.container");
-
-            currentIndex = (currentIndex + 1) % totalImages; /* aggiorna l indice dell immagine*/
-
-            immagini[currentIndex].classList.add('active'); /*mostra la prima immagine*/
-            console.log("nuovo indice:", currentIndex)
-        }
-        //inizializza il carosello
-        if (totalImages > 0) {
-            immagini[currentIndex].classList.add('active');
-            console.log("immagine iniziale attiva")
-        } else {
-            console.log("nessuna immagine trovata nel carosello")
-        }
-        setInterval(cambiaImmagine, 2000)
-
+            // Inizializza il carosello
+            if (totalImages > 0) {
+                immagini[currentIndex].classList.add('active');
+                setInterval(cambiaImmagine, 3000); // Cambia immagine ogni 3 secondi
+            }
+        });
     </script>
 
 </body>
